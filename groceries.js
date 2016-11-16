@@ -35,9 +35,17 @@ function addItem()
 
 function removeParentListItem()
 {
+
   var mom = this.parentNode;
   var grandma = mom.parentNode;
   grandma.removeChild(mom);
+  var itemRemove = mom.firstChild.textContent;
+  var itemIndex = myList.indexOf(itemRemove);
+  myList.splice(itemIndex,1);
+  for(i = 0; i<myList.length; i++)
+  {
+    console.log(myList[i]);
+  }
 }
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
