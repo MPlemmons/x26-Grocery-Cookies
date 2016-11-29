@@ -47,6 +47,18 @@ function removeParentListItem()
     console.log(myList[i]);
   }
 }
+
+function saveList()
+{
+   var newList = myList.toString();
+   setCookie("myCookie",newList,20);
+}
+
+function clearList()
+{
+  document.getElementById("listDisplay").innerHTML = "";
+  myList = [];
+}
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
